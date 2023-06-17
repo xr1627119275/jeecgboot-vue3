@@ -18,7 +18,7 @@
   import {useListPage} from "/@/hooks/system/useListPage";
   import {BasicTable, useTable, TableAction} from '/@/components/Table';
   const title = ref<string>('');
-  const width = ref<number>(800);
+  const width = ref<number>(1200);
   const visible = ref<boolean>(false);
   const disableSubmit = ref<boolean>(false);
   const registerForm = ref();

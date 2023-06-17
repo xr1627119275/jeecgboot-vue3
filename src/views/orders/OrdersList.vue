@@ -22,22 +22,26 @@
             </a-col>
             <a-col :lg="8">
               <a-form-item label="售后类型" name="aftersaleType">
-                <a-input placeholder="请输入售后类型" v-model:value="queryParam.aftersaleType"></a-input>
+                <JDictSelectTag placeholder="请选择售后类型" type="select" v-model:value="queryParam.aftersaleType" dictCode="aftersale_type" />
+<!--                <a-input placeholder="请输入售后类型" v-model:value="queryParam.aftersaleType"></a-input>-->
               </a-form-item>
             </a-col>
             <a-col :lg="8">
               <a-form-item label="售后状态" name="aftersaleStatus">
-                <a-input placeholder="请输入售后状态" v-model:value="queryParam.aftersaleStatus"></a-input>
+                <JDictSelectTag placeholder="请选择售后状态" type="select" v-model:value="queryParam.aftersaleStatus" dictCode="aftersale_status" />
+<!--                <a-input placeholder="请输入售后状态" v-model:value="queryParam.aftersaleStatus"></a-input>-->
               </a-form-item>
             </a-col>
             <a-col :lg="8">
               <a-form-item label="发货状态" name="shippingStatus">
-                <a-input placeholder="请输入发货状态" v-model:value="queryParam.shippingStatus"></a-input>
+<!--                <a-input placeholder="请输入发货状态" v-model:value="queryParam.shippingStatus"></a-input>-->
+                <JDictSelectTag placeholder="请选择发货状态" type="select" v-model:value="queryParam.shippingStatus" dictCode="shipping_status" />
               </a-form-item>
             </a-col>
             <a-col :lg="8">
               <a-form-item label="操作类型" name="operationType">
-                <a-input placeholder="请输入操作类型" v-model:value="queryParam.operationType"></a-input>
+<!--                <a-input placeholder="请输入操作类型" v-model:value="queryParam.operationType"></a-input>-->
+                <JDictSelectTag placeholder="请选择操作类型" type="select" v-model:value="queryParam.operationType" dictCode="operation_type" />
               </a-form-item>
             </a-col>
             <a-col :lg="8">
@@ -166,6 +170,7 @@ import { columns } from './Orders.data';
 import { list, deleteOne, batchDelete, getImportUrl, getExportUrl } from './Orders.api';
 import { downloadFile } from '/@/utils/common/renderUtils';
 import OrdersModal from './components/OrdersModal.vue'
+import JDictSelectTag from "/@/components/Form/src/jeecg/components/JDictSelectTag.vue";
 
 const formRef = ref();
 const queryParam = reactive<any>({});
