@@ -29,6 +29,11 @@
                 <a-input placeholder="请输入备注说明" v-model:value="queryParam.description"></a-input>
               </a-form-item>
             </a-col>
+            <a-col :lg="8">
+              <a-form-item label="是否有备注">
+                <a-switch placeholder="是否有备注" v-model:checked="queryParam.hasDesc" :checkedValue="1"></a-switch>
+              </a-form-item>
+            </a-col>
           </template>
           <a-col :xl="6" :lg="7" :md="8" :sm="24">
             <span style="float: left; overflow: hidden" class="table-page-search-submitButtons">
@@ -97,7 +102,9 @@
   import UserOrdersForm from "/@/views/orders/components/UserOrdersForm.vue";
 
   const formRef = ref();
-  const queryParam = reactive<any>({});
+  const queryParam = reactive<any>({
+    hasDesc: 0,
+  });
   const toggleSearchStatus = ref<boolean>(false);
   const registerModal = ref();
   const editModal = ref();
